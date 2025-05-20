@@ -23,7 +23,7 @@ def recommend(movie):
 
 @st.cache_data(show_spinner=False)
 def load_similarity():
-    with open('similarity.pkl', 'rb') as f:
+    with open('app/similarity.pkl', 'rb') as f:
         similarity = pickle.load(f)
     return similarity
 
@@ -31,7 +31,7 @@ st.set_page_config(page_title="🎬 Movie Recommender", layout="wide")
 st.title('🎥 Movie Recommender System')
 
 # Load movie list locally (make sure this path is correct)
-movies = pickle.load(open('movie_list.pkl', 'rb'))
+movies = pickle.load(open('app/movie_list.pkl', 'rb'))
 
 # Load similarity matrix locally
 similarity = load_similarity()
